@@ -65,7 +65,7 @@
         var $m_sFolder;
         var $m_arrSize;
 
-        function CAlbumChecksumFile($_sFolder)
+        function __construct($_sFolder)
         {
             $this->m_sFolder=$_sFolder;
             $this->Reset();

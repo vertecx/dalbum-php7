@@ -22,7 +22,7 @@ class CTimer
 {
     var $startTime, $endTime, $timeDifference, $bFinished;
 
-    function CTimer() { $this->start();}
+    function __construct() { $this->start();}
     function start() { $this->startTime = $this->currentTime(); $this->bFinished=false;}
     function finish() { $this->endTime = $this->currentTime(); $this->bFinished=true;}
     function getTime()

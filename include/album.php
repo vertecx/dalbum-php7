@@ -191,7 +191,7 @@ class CImage extends CBaseObject
     var $m_bResize;         // resize image (true by default)
     var $m_refAlbum;        // reference to album that contains this image
 
-    function CImage()
+    function __construct()
     {
         $this->Reset();
     }
@@ -480,7 +480,7 @@ class CAlbum extends CBaseObject
 
     }
 
-    function CAlbum()
+    function __construct()
     {
         $this->Reset();
     }
