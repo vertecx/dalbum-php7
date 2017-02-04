@@ -420,7 +420,7 @@ function br2nl($text)
 function html2txt($html)
 {
     $ret = strtr($html, array_flip(get_html_translation_table(HTML_ENTITIES)));
-    $ret = preg_replace("/&#([0-9]+);/me", "chr('\\1')", $ret);
+    $ret = preg_replace_callback("/&#([0-9]+);/m", function($m) { return chr($m[1]); }, $ret);
     $ret = strip_tags(br2nl($ret));
 
     return $ret;
