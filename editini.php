@@ -112,7 +112,7 @@
 
         // Users
         $alb->m_arrUsers=array();
-        $arr=split(",",$_POST['album_users']);
+        $arr=explode(",",$_POST['album_users']);
         foreach ($arr as $a)
         {
             $a=trim($a);

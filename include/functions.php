@@ -371,7 +371,7 @@ function quotehtml($text)
 // same as urlencode, but leave / characters as is (urlencode replaces them with %2F)
 function quoteurl($text)
 {
-    $parts=split('/',$text);
+    $parts=explode('/',$text);
     for ($i=0;$i<count($parts);$i++)
         $parts[$i]=rawurlencode($parts[$i]);
 
@@ -595,7 +595,7 @@ function StartSessionAndGetUserName($cache='private_no_expire',$bCreateNewSessio
         // Check if we have login/password in the url
         if (isset($_GET['login']))
         {
-            $pwd=split(':',$_GET['login']);
+            $pwd=explode(':',$_GET['login']);
             if (count($pwd)>=1)
             {
                 $bCreateNewSession=true;
@@ -999,10 +999,10 @@ function hiddenForms($x)
     if (!$x)
         return "";
     $x=substr($x,1);
-    $v=split('&amp;',$x);
+    $v=explode('&amp;',$x);
     foreach ($v as $f)
     {
-        $a=split("=",$f);
+        $a=explode("=",$f);
         if (count($a)==2)
             print "<input type=\"hidden\" name=\"$a[0]\" value=\"$a[1]\">\n";
     }

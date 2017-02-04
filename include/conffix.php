@@ -141,13 +141,13 @@ function getPreferredLanguages()
     if (!isset($_SERVER['HTTP_ACCEPT_LANGUAGE']))
         return array();
     $acc=$_SERVER['HTTP_ACCEPT_LANGUAGE'];
-    $a=split(",",$acc);
+    $a=explode(",",$acc);
 
     $b=array();
     foreach ($a as $x)
     {
         $q=1;
-        $z=split(";",$x);
+        $z=explode(";",$x);
         if (empty($z))
             continue;
         for ($i=1;$i<count($z);++$i)

@@ -96,7 +96,7 @@
         {
             for ($i=0;$i<count($f);++$i)
             {
-                $arr=split(":",$f[$i]);
+                $arr=explode(":",$f[$i]);
                 if ($arr[0]==$_POST['user'])
                 {
                     if ($_POST['action']=='change')
@@ -160,7 +160,7 @@
     {
         for ($i=0;$i<count($f);++$i)
         {
-            $arr=split(":",$f[$i]);
+            $arr=explode(":",$f[$i]);
             if ($arr[0]==$_POST['user'])
             {
                 if ($sUserName==$arr[0])
@@ -211,7 +211,7 @@ function MainScreen($f)
 
   foreach ($f as $a)
   {
-    $arr=split(":",$a);
+    $arr=explode(":",$a);
     if (isset($_POST['user']) && $_POST['user']==$arr[0])
         $selected="selected";
     else

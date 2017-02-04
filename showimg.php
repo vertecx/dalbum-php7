@@ -401,7 +401,7 @@
 
         if (!empty($date))
         {
-            $date=split(':',str_replace(' ',':',$date));
+            $date=explode(':',str_replace(' ',':',$date));
             $date="{$date[0]}-{$date[1]}-{$date[2]} {$date[3]}:{$date[4]}:{$date[5]}";
             $date=strftime($lang['showExifDateFormat'],strtotime($date));
             $data[]="{$lang['showExifDate']}|$date";
@@ -413,7 +413,7 @@
             $make=$exif['Make'];
             if (strstr($make," "))
             {
-                $make=split(" ",$make);
+                $make=explode(" ",$make);
                 $make=$make[0];
             }
         }
@@ -451,7 +451,7 @@
         // Exposure
         if (isset($exif['ExposureTime']))
         {
-            list($d1,$d2)=split('/',$exif['ExposureTime']);
+            list($d1,$d2)=explode('/',$exif['ExposureTime']);
             if ($d1>0 && $d2>0)
                 $e=$d1/$d2;
             else
@@ -467,7 +467,7 @@
             $data[]="{$lang['showExifAperture']}|{$exif['COMPUTED']['ApertureFNumber']}";
         if (isset($exif['FocalLength']))
         {
-            list($d1,$d2)=split('/',$exif['FocalLength']);
+            list($d1,$d2)=explode('/',$exif['FocalLength']);
             if ($d1>0 && $d2>0)
             {
                 $e=round($d1/$d2,1);
@@ -485,7 +485,7 @@
             $sExifDetails.="<tr><th colspan=2>{$lang['showExifDialogTitle']}</th></tr>";
             foreach ($data as $d)
             {
-                list($name,$value)=split('\|',$d);
+                list($name,$value)=explode('|',$d);
                 $sExifDetails.=("<tr><td class='imgParamName'>$name</td><td class='imgParamValue'>$value</td></tr>");
             }
             $sExifDetails.= "</table>";

@@ -686,7 +686,7 @@ function &exif_php_read_data($FileName,$bArray=false)
 
         if (!empty($v))
         {
-            $x=split('/',$v);
+            $x=explode('/',$v);
             if (count($x)>=2 && $x[1]>0)
             {
                 $b=(double)$x[0]/$x[1];
