@@ -35,7 +35,7 @@
 
     if ($langFile!="us-en.php")
     {
-        if (eregi('^[a-z-]+.php$',$langFile) && @include_once(DALBUM_ROOT . "/include/lang/$langFile"))
+        if (preg_match('/^[a-z-]+.php$/i',$langFile) && @include_once(DALBUM_ROOT . "/include/lang/$langFile"))
             $lang=array_merge($lang,$newlang);  // replace values in US-english with localized strings
     }
     unset($newlang);
@@ -152,7 +152,7 @@ function getPreferredLanguages()
             continue;
         for ($i=1;$i<count($z);++$i)
         {
-            if (ereg('q=([0-9.]+)',$z[$i],$q1) && !empty($q1))
+            if (preg_match('/q=([0-9.]+)/',$z[$i],$q1) && !empty($q1))
             {
                 $q=$q1[1];
             }
