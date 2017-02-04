@@ -1,0 +1,7 @@
+Satisfy All
+Options -Indexes 
+
+<Files ~ "^\.">
+order allow,deny
+deny from all
+</Files>
