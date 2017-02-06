@@ -405,7 +405,7 @@ function secureurl($url,$bCallCustom=true)
 
     if ($bDirect)
         return quoteurl(translateRef($g_sAlbumsRootBrowser . $url));
-    if (@$_SERVER['ORIG_PATH_INFO'] || @$_SERVER['PATH_INFO'])
+    if (isset($_SERVER['ORIG_PATH_INFO']) || isset($_SERVER['PATH_INFO']))
         return translateRef('photo.php' . quoteurl($url));
     return translateRef('photo.php?file=' . quoteurl($url));
 }

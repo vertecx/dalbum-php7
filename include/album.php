@@ -506,7 +506,7 @@ class CAlbum extends CBaseObject
     }
 
     // Load serialized album tree
-    function &CreateFromArchive()
+    static function &CreateFromArchive()
     {
         global $g_sPrivateDir;
         $alb=&createAlbum();

@@ -424,7 +424,7 @@ function _exif_php_get32u(&$str,$off,$Motorola)
 //--------------------------------------------------------------------------
 // Process one of the nested EXIF directories.
 //--------------------------------------------------------------------------
-function _exif_php_process_exif_dir(&$II, &$Data, $nDirOffsetBase, $NestingLevel, $Motorola, $path, &$names)
+function _exif_php_process_exif_dir(&$II, &$Data, $nDirOffsetBase, $NestingLevel, $Motorola, $path, &$names=null)
 {
     global $_g_exifTagTable;
     if ($NestingLevel > 4)
@@ -639,7 +639,8 @@ function _exif_php_process_exif(&$II, &$Data)
     }
 
     // First directory starts 16 bytes in.  All offset are relative to 8 bytes in.
-    _exif_php_process_exif_dir($II,substr($Data,8), $FirstOffset, 0, $Motorola, "IFD0");
+    $SubData = substr($Data,8);
+    _exif_php_process_exif_dir($II,$SubData, $FirstOffset, 0, $Motorola, "IFD0");
     return true;
 }
 
