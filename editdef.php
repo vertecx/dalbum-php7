@@ -41,8 +41,6 @@
     if ($g_bGZip)
         ob_start("ob_gzhandler");
 
-    remove_bloody_magic_quotes();
-
     // Start session and get current user name
     $sUserName=StartSessionAndGetUserName('private; must-revalidate');
     if (function_exists('everypageCallback'))

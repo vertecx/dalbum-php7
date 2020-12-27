@@ -42,7 +42,6 @@
         ob_start("ob_gzhandler");
 
     $timer=new CTimer();
-    remove_bloody_magic_quotes();
 
     $sUserName=StartSessionAndGetUserName('private; must-revalidate');
     if (function_exists('everypageCallback'))
@@ -277,7 +276,7 @@
 
             $sFullLink=secureURL($image->m_sFullFilename);
 
-            if (!strstr($sFullLink,"&"))
+            if (!strstr($sFullLink,"?"))
                 $sFullLink.="?download=1";
             else
                 $sFullLink.="&download=1";

@@ -405,8 +405,6 @@ function secureurl($url,$bCallCustom=true)
 
     if ($bDirect)
         return quoteurl(translateRef($g_sAlbumsRootBrowser . $url));
-    if (isset($_SERVER['ORIG_PATH_INFO']) || isset($_SERVER['PATH_INFO']))
-        return translateRef('photo.php' . quoteurl($url));
     return translateRef('photo.php?file=' . quoteurl($url));
 }
 
@@ -494,16 +492,6 @@ function & strip_slashes(&$str)
 }
 
 
-function remove_bloody_magic_quotes()
-{
-    if(get_magic_quotes_gpc())
-    {
-        strip_slashes($_GET);
-        strip_slashes($_POST);
-        strip_slashes($_COOKIE);
-    }
-}
-
 function dirname_ex($name)
 {
     $dir=dirname($name);
@@ -526,7 +514,7 @@ function &better_parse_ini_file($filename, $process_sections = false)
     for ($i=0;$i<count($lines);++$i)
     {
         $line = trim($lines[$i]);
-        if($line == "" || $line{0}==';')
+        if($line == "" || $line[0]==';')
             continue;
 
         if($line[0] == "[" && $line[strlen($line) - 1] == "]")
@@ -639,7 +627,7 @@ function StartSessionAndGetUserName($cache='private_no_expire',$bCreateNewSessio
         if (count($pwd)==2 && authenticate($pwd[0],$pwd[1]))
             $_SESSION['DAlbum_UID']=$pwd[0];
 
-        if (count($pwd)==1 && $pwd[0]{0}=='-')
+        if (count($pwd)==1 && $pwd[0][0]=='-')
             $_SESSION['DAlbum_UID']=$pwd[0];
 
         if (isset($_SESSION['DAlbum_UID']))

@@ -558,7 +558,7 @@ class CAlbum extends CBaseObject
                 while(false !== ($file = readdir($handle)))
                 {
                     // Ignore hidden files
-                    if($file{0}=="." || $file{0}=="_")
+                    if($file[0]=="." || $file[0]=="_")
                         continue;
 
                     if (!in_array($file,$allowed))
@@ -616,7 +616,7 @@ class CAlbum extends CBaseObject
             while(false !== ($file = readdir($handle)))
             {
                 // Ignore hidden files
-                if($file{0}=="." || $file{0}=="_")
+                if($file[0]=="." || $file[0]=="_")
                     continue;
 
                 // Put dirs in $dirs[] and files in $files[]
@@ -761,7 +761,7 @@ class CAlbum extends CBaseObject
         }
 
         // Ignore hidden files
-        if ($file{0}=="." || $file{0}=="_" )
+        if ($file[0]=="." || $file[0]=="_" )
             return;
 
         // Put dirs in $dirs[] and files in $files[]

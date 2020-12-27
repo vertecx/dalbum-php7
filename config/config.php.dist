@@ -162,7 +162,7 @@ $g_arrLangList= array(
     //"el"      => "el-gr.php", // Greek.      Requires $g_sCharset="ISO-8859-7"
     //"gr"      => "el-gr.php", // Greek.      Requires $g_sCharset="ISO-8859-7"
     //"et"      => "et.php",    // Estonian.   Requires $g_sCharset="ISO-8859-4"
-    //"lt"      => "lt.php",    // Lithuanian. Requires $g_sCharset="ISO-8859-13"
+    //"lt"      => "lt.php",    // Lithuanian. Requires $g_sCharset="UTF-8"
     //"hu"      => "hu.php",    // Hungarian.  Requires $g_sCharset="ISO-8859-2"
     ""        => ""
 );
