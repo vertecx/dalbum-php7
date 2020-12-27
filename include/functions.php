@@ -494,16 +494,6 @@ function & strip_slashes(&$str)
 }
 
 
-function remove_bloody_magic_quotes()
-{
-    if(get_magic_quotes_gpc())
-    {
-        strip_slashes($_GET);
-        strip_slashes($_POST);
-        strip_slashes($_COOKIE);
-    }
-}
-
 function dirname_ex($name)
 {
     $dir=dirname($name);

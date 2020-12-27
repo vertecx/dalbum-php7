@@ -38,11 +38,8 @@
     elseif (file_exists(DALBUM_ROOT . "/include/custom.php"))
         include_once(DALBUM_ROOT . "/include/custom.php");
 
-
     if ($g_bGZip)
         ob_start("ob_gzhandler");
-
-    remove_bloody_magic_quotes();
 
     $sUserName=StartSessionAndGetUserName('private; must-revalidate');
     if (function_exists('everypageCallback'))

@@ -45,8 +45,6 @@
     $timer=new CTimer();
     $timer->start();
 
-    remove_bloody_magic_quotes();
-
     // Start session and get current user name
     $sUserName=StartSessionAndGetUserName('private; must-revalidate');
 

@@ -42,7 +42,6 @@
         ob_start("ob_gzhandler");
 
     $timer=new CTimer();
-    remove_bloody_magic_quotes();
 
     $sUserName=StartSessionAndGetUserName('private; must-revalidate');
     if (function_exists('everypageCallback'))

@@ -265,8 +265,6 @@
         @set_time_limit(SCRIPT_EXEC_TIMEOUT);   // set long timeout
     }
 
-    remove_bloody_magic_quotes();
-
     $sUserName="";
     if (!CMDLINE_MODE)
         $sUserName=StartSessionAndGetUserName('nocache',true);

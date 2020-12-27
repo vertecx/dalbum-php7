@@ -42,8 +42,6 @@
     if (function_exists('everypageCallback'))
         everypageCallback($sUserName);
 
-    remove_bloody_magic_quotes();
-
     if (isset($_POST['cancelexit']) || isAdminMode($sUserName)!=2)
     {
         dalbum_relocate(translateRef('index.php'));

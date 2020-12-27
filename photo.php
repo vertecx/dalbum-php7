@@ -35,9 +35,6 @@
     elseif (file_exists(DALBUM_ROOT."/include/custom.php"))
         include_once(DALBUM_ROOT."/include/custom.php");
 
-
-    remove_bloody_magic_quotes();
-
     $sUserName=StartSessionAndGetUserName('private_no_expire');
     if (function_exists('everypageCallback'))
         everypageCallback($sUserName);
