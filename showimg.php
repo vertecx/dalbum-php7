@@ -276,7 +276,7 @@
 
             $sFullLink=secureURL($image->m_sFullFilename);
 
-            if (!strstr($sFullLink,"&"))
+            if (!strstr($sFullLink,"?"))
                 $sFullLink.="?download=1";
             else
                 $sFullLink.="&download=1";
