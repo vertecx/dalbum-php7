@@ -526,7 +526,7 @@ function &better_parse_ini_file($filename, $process_sections = false)
     for ($i=0;$i<count($lines);++$i)
     {
         $line = trim($lines[$i]);
-        if($line == "" || $line{0}==';')
+        if($line == "" || $line[0]==';')
             continue;
 
         if($line[0] == "[" && $line[strlen($line) - 1] == "]")
@@ -639,7 +639,7 @@ function StartSessionAndGetUserName($cache='private_no_expire',$bCreateNewSessio
         if (count($pwd)==2 && authenticate($pwd[0],$pwd[1]))
             $_SESSION['DAlbum_UID']=$pwd[0];
 
-        if (count($pwd)==1 && $pwd[0]{0}=='-')
+        if (count($pwd)==1 && $pwd[0][0]=='-')
             $_SESSION['DAlbum_UID']=$pwd[0];
 
         if (isset($_SESSION['DAlbum_UID']))

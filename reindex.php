@@ -225,7 +225,7 @@
                     if ($image->IsImageFilename())
                     {
                         // Ignore hidden files
-                        if($file{0}=="." || $file{0}=="_")
+                        if($file[0]=="." || $file[0]=="_")
                             continue;
                         $s=@filesize($abs);
                         $size+=$s;
